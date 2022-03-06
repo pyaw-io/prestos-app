@@ -18,6 +18,8 @@ const Checkout = (props) => {
   const [validPostal,setValidPostal] = useState(false)
   const [validCity,setValidCity] = useState(false)
 
+  const [touchInput,setTouchInput] = useState(false)
+
 
 
 
@@ -36,6 +38,8 @@ const Checkout = (props) => {
     setValidStreet(validInputValue(enteredStreet))
     setValidPostal(validPostalValue(enteredPostal))
     setValidCity(validInputValue(enteredCity))
+
+    setTouchInput(true)
 
     const formIsValid =
     validInputValue(enteredName) &&
@@ -63,7 +67,23 @@ const Checkout = (props) => {
 
     
 
-    const inputClasses = input => (input? `${classes.control}` : `${classes.control}  ${classes.invalid} `)
+    
+
+    const inputClasses  = function(input){
+
+        if(input === false && touchInput === false){
+            return `${classes.control}`
+        }
+        
+        
+        if (input === true && touchInput === true){
+            return `${classes.control}`
+        }
+        if (input === false && touchInput === true){
+            return `${classes.control}  ${classes.invalid} `
+        }
+
+    }
 
 
   return (
@@ -71,24 +91,24 @@ const Checkout = (props) => {
       <div className={inputClasses(validName)}>
         <label htmlFor="name">Your Name</label>
         <input type="text" id="name" ref={nameInputRef} />
-        {!validName && <p>Please enter a valid Name</p>}
+        {!validName && touchInput  && <p>Please enter a valid Name</p>}
       </div>
       <div className={inputClasses(validStreet)}>
         <label htmlFor="street">Street</label>
         <input type="text" id="street" ref={streetInputRef} />
-        {!validStreet && <p>Please enter a valid Street</p>}
+        {!validStreet  && touchInput && <p>Please enter a valid Street</p>}
 
       </div>
       <div className={inputClasses(validPostal)}>
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalInputRef} />
-        {!validPostal && <p>Please enter a valid Postal Address</p>}
+        {!validPostal && touchInput  && <p>Please enter a valid Postal Address</p>}
 
       </div>
       <div className={inputClasses(validCity)}>
         <label htmlFor="city">City</label>
         <input type="text" id="city" ref={cityInputRef} />
-        {!validCity && <p>Please enter a valid City</p>}
+        {!validCity && touchInput && <p>Please enter a valid City</p>}
 
       </div>
       <div className={classes.actions}>

@@ -8,12 +8,15 @@ import Header from './Component/Layout/Header'
 
 
 
+
 function App() {
   const [showCart,setShowCart] = useState(false)
-  // const []
+  
+
 
   const showCartHandler = () =>{
     setShowCart(true)
+  
     
   }
 

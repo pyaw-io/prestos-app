@@ -9,7 +9,23 @@ html {
 }
 
 body {
+  background-color: #fc5001;
   margin: 0;
-  background-color: #3f3f3f;
 }
+.swiper-button-prev::after{
+  color: black;
+  
+    
+}
+.swiper-button-next::after{
+  color: black;
+  
+    
+}
+
+
+
+
+
+
 

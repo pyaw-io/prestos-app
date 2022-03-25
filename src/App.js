@@ -5,6 +5,7 @@ import Cart from './Component/Cart/Cart';
 
 
 import Header from './Component/Layout/Header'
+import Footer from './Component/Layout/Footer';
 
 
 
@@ -34,9 +35,12 @@ function App() {
       
       {showCart && <Cart onHideCart ={hideCartHandler} />}
       <Header  onShowCart ={showCartHandler}></Header>
+     
       <main>
         <Meals/>
+        
       </main>
+      <Footer/>
     </CartProvider>
   );
 }

@@ -1,0 +1,14 @@
+.footer{
+    margin: 5rem auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    background-color: aliceblue;
+    box-shadow: 0 1px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.footer h4{
+    color: #fa9017;
+
+}
+

@@ -1,19 +1,26 @@
 import { Fragment } from "react";
+import Carousel from "../UI/Swiper";
 import styles from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
-import mealsImage from "../../assets/meals.jpg";
+
 
 const Header = (props) => {
   return (
     <Fragment>
       <header className={styles.header}>
-        <h1>ReactMeals</h1>
+       <div className={styles.title}>
+            <h1>Presto's</h1>
+              <h3>Food House</h3>
+        </div>
+
+        <div className={styles.search}>
+          <input type="text" placeholder="Search meals"></input>
+          <a href="#"><i className="fa fa-search"></i></a>
+        </div>
         <HeaderCartButton onClick={props.onShowCart}/>
-      </header>
-      <div className={styles["main-image"]}>
-        <img src={mealsImage} alt="An image of table full of delicious meals" />
-      </div>
+      </header>    
+      <Carousel/>
     </Fragment>
   );
 };

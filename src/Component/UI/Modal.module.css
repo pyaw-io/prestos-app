@@ -8,8 +8,10 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+
+
 .modal {
-  position: absolute;
+  position: fixed;
   top: 10vh;
   left: 5%;
   width: 90%;
